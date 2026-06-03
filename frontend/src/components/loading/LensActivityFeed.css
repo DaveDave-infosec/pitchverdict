@@ -1,0 +1,23 @@
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-height: 72px;
+  width: 100%;
+}
+
+.activity-item {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.01em;
+  animation: activity-in 600ms ease-out;
+}
+
+@keyframes activity-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

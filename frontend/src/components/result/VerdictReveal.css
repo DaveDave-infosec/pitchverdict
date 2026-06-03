@@ -1,0 +1,30 @@
+.verdict-reveal {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 700;
+  font-size: 44px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1.1;
+}
+
+.verdict-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.verdict-reveal--pass { color: var(--verdict-pass, #1A7A5E); }
+.verdict-reveal--conditional { color: var(--verdict-conditional, #B89A4E); }
+.verdict-reveal--needs-work { color: var(--verdict-needs-work, #C97C3E); }
+.verdict-reveal--hard-pass { color: var(--verdict-hard-pass, #7A2020); }
+.verdict-reveal--too-early { color: var(--text-secondary, #7B7B85); }
+
+@media (max-width: 640px) {
+  .verdict-reveal {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+}

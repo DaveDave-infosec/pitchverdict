@@ -1,0 +1,289 @@
+.pitch-form {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+  width: 100%;
+}
+
+/* Step indicator */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+.step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease,
+    box-shadow 200ms ease;
+  cursor: not-allowed;
+  padding: 0;
+}
+
+.step-dot.completed {
+  background: var(--elevated);
+  border-color: var(--accent);
+  color: var(--accent-light);
+  cursor: pointer;
+}
+
+.step-dot.completed:hover {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.step-dot.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 4px var(--accent-glow);
+  cursor: default;
+}
+
+/* Step content fade-slide */
+.step-content {
+  animation: step-in 300ms ease-out;
+}
+
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Field components */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-label {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.field-required {
+  color: var(--accent);
+}
+
+.field-input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 12px 14px;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+  width: 100%;
+}
+
+.field-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.field-textarea-wrapper {
+  position: relative;
+}
+
+.field-textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 14px 16px 32px 16px;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+  width: 100%;
+  resize: none;
+  min-height: 96px;
+  overflow: hidden;
+  display: block;
+}
+
+.field-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.char-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  pointer-events: none;
+  background: var(--surface);
+  padding: 0 4px;
+}
+
+.field-confidence-hint {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+  animation: hint-in 300ms ease-out;
+}
+
+@keyframes hint-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Review step */
+.review-step {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.review-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 16px 20px;
+}
+
+.review-section.empty {
+  border-style: dashed;
+  border-color: var(--border-subtle);
+}
+
+.review-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.review-section-label {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.review-edit-btn {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 0;
+  transition: color 150ms ease;
+}
+
+.review-edit-btn:hover {
+  color: var(--accent-light);
+}
+
+.review-section-value {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.review-empty {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.review-meta {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--elevated);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.review-total-chars {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.review-warning {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--warning);
+  line-height: 1.5;
+}
+
+/* Form navigation */
+.form-nav {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.form-nav-spacer {
+  flex: 1;
+}
+
+.nav-submit {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 720px) {
+  .pitch-form {
+    padding: 40px 16px 80px;
+  }
+  .step-indicator {
+    gap: 6px;
+    margin-bottom: 36px;
+  }
+  .step-dot {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+}
+
+.submit-error {
+  margin-top: 16px;
+  font-family: var(--font-primary);
+  font-size: 13px;
+  color: var(--danger);
+  text-align: center;
+  line-height: 1.5;
+}

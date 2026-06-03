@@ -1,0 +1,117 @@
+.lens-panel {
+  margin-bottom: 56px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lens-panel--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lens-panel__header {
+  margin-bottom: 16px;
+}
+
+.lens-panel__label {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 11px;
+  color: var(--text-tertiary, #545460);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lens-panel__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.lens-card {
+  position: relative;
+  background: var(--surface, #0F0F15);
+  border-radius: 6px;
+  padding: 20px 22px 22px 26px;
+  border: 1px solid var(--border, #1F1F2A);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lens-card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lens-card__accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--lens-color);
+  opacity: 0.9;
+}
+
+.lens-card__head {
+  margin-bottom: 12px;
+}
+
+.lens-card__name {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+  line-height: 1.15;
+}
+
+.lens-card__personality {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 10px;
+  color: var(--lens-color);
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.lens-card__verdict {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .lens-panel__grid { grid-template-columns: 1fr; }
+}
+.lens-card__looks-for {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+  border-left: 2px solid var(--lens-color);
+  opacity: 0.85;
+}
+
+.lens-card__looks-for-label {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 9px;
+  color: var(--text-tertiary, #545460);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lens-card__looks-for-value {
+  font-size: 12px;
+  color: var(--text-secondary, #7B7B85);
+  line-height: 1.5;
+  font-style: italic;
+}

@@ -1,0 +1,236 @@
+.share-card {
+  width: 1080px;
+  height: 1350px;
+  background: linear-gradient(180deg, #07070B 0%, #0a0a14 60%, #07070B 100%);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.share-card__live-bar {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 22px 0;
+  text-align: center;
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 17px;
+  letter-spacing: 0.24em;
+  color: #7B7B85;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  flex-shrink: 0;
+}
+
+.share-card__live-dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  background: #4FB05C;
+  border-radius: 50%;
+  margin-right: 14px;
+  vertical-align: middle;
+  box-shadow: 0 0 14px rgba(79, 176, 92, 0.7);
+}
+
+.share-card__body {
+  flex: 1;
+  padding: 56px 80px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.share-card__brand {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 50px;
+  letter-spacing: -0.01em;
+}
+
+.share-card__verdict {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 58px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
+  line-height: 1.05;
+}
+
+.share-card__verdict--pass { color: #4FB05C; }
+.share-card__verdict--conditional { color: #C9A857; }
+.share-card__verdict--needs-work { color: #D4823E; }
+.share-card__verdict--hard-pass { color: #C45A4E; }
+.share-card__verdict--too-early { color: #7B7B85; }
+
+.share-card__score-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.share-card__score {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 156px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+}
+
+.share-card__score--pass { color: #4FB05C; }
+.share-card__score--conditional { color: #C9A857; }
+.share-card__score--needs-work { color: #D4823E; }
+.share-card__score--hard-pass { color: #C45A4E; }
+.share-card__score--too-early { color: #7B7B85; }
+
+.share-card__score-suffix {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 26px;
+  color: #545460;
+  margin-left: 10px;
+  align-self: flex-end;
+  margin-bottom: 16px;
+}
+
+.share-card__name {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 68px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.share-card__meta {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 19px;
+  color: #7B7B85;
+  margin-bottom: 28px;
+  text-transform: lowercase;
+  letter-spacing: 0.03em;
+}
+
+.share-card__chips {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 38px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.share-card__chip {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #C0C0C5;
+}
+
+.share-card__chip--contested {
+  color: #9B7CD4;
+  background: rgba(124, 92, 191, 0.12);
+  border-color: rgba(124, 92, 191, 0.3);
+}
+
+.share-card__quote-block {
+  margin-bottom: 40px;
+  max-width: 860px;
+}
+
+.share-card__quote-label {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 14px;
+  letter-spacing: 0.24em;
+  color: #C9A857;
+  margin-bottom: 18px;
+}
+
+.share-card__quote {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-style: italic;
+  font-size: 28px;
+  line-height: 1.4;
+  color: #FFFFFF;
+}
+
+.share-card__lenses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 18px;
+  margin-top: 28px;
+}
+
+.share-card__lenses span {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 14px;
+  color: #545460;
+  letter-spacing: 0.04em;
+  position: relative;
+}
+
+.share-card__lenses span:not(:last-child)::after {
+  content: '\00B7';
+  margin-left: 18px;
+  color: #2A2A35;
+}
+
+.share-card__footer {
+  padding: 30px 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
+.share-card__footer-label {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  color: #FFFFFF;
+}
+
+.share-card__footer-sub {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 13px;
+  color: #7B7B85;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+.share-card__footer-right {
+  text-align: right;
+}
+
+.share-card__contract-label {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #545460;
+  margin-bottom: 5px;
+}
+
+.share-card__contract {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 14px;
+  color: #C0C0C5;
+  padding: 7px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}

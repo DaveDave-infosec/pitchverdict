@@ -1,0 +1,47 @@
+.stage-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.stage-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
+}
+
+.stage-card:hover {
+  border-color: var(--border-subtle);
+  background: var(--elevated);
+}
+
+.stage-card.selected {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.stage-emoji {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.stage-label {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+@media (max-width: 720px) {
+  .stage-selector {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}

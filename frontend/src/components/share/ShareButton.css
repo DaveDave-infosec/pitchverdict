@@ -1,0 +1,30 @@
+.share-button {
+  padding: 12px 22px;
+  background: var(--surface, #0F0F15);
+  color: var(--text-primary);
+  border: 1px solid var(--border, #1F1F2A);
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: border-color 200ms ease, background 200ms ease, color 200ms ease;
+}
+
+.share-button:hover:not(:disabled) {
+  border-color: rgba(91, 108, 249, 0.5);
+  background: rgba(91, 108, 249, 0.08);
+}
+
+.share-button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.share-card-portal {
+  position: absolute;
+  left: -99999px;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+}

@@ -1,0 +1,80 @@
+.convergence-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.conv-canvas {
+  position: relative;
+  width: 320px;
+  height: 220px;
+}
+
+.conv-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow), 0 0 28px var(--accent-glow);
+  transform: translate(-50%, -50%);
+  animation: center-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes center-pulse {
+  0%, 100% { box-shadow: 0 0 12px var(--accent-glow), 0 0 28px var(--accent-glow); }
+  50%      { box-shadow: 0 0 20px var(--accent-glow), 0 0 44px var(--accent-glow); }
+}
+
+.conv-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: -4px;
+  margin-left: -4px;
+}
+
+.conv-node-0 { animation: conv-drift-0 55s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.conv-node-1 { animation: conv-drift-1 55s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.conv-node-2 { animation: conv-drift-2 55s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.conv-node-3 { animation: conv-drift-3 55s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.conv-node-4 { animation: conv-drift-4 55s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.conv-node-5 { animation: conv-drift-5 55s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+
+@keyframes conv-drift-0 {
+  0%   { transform: translate(-140px, -85px); opacity: 0.35; background: rgba(91, 108, 249, 0.35); }
+  100% { transform: translate(0, 0); opacity: 1; background: var(--accent); }
+}
+@keyframes conv-drift-1 {
+  0%   { transform: translate(140px, -85px); opacity: 0.35; background: rgba(91, 108, 249, 0.35); }
+  100% { transform: translate(0, 0); opacity: 1; background: var(--accent); }
+}
+@keyframes conv-drift-2 {
+  0%   { transform: translate(-140px, 85px); opacity: 0.35; background: rgba(91, 108, 249, 0.35); }
+  100% { transform: translate(0, 0); opacity: 1; background: var(--accent); }
+}
+@keyframes conv-drift-3 {
+  0%   { transform: translate(140px, 85px); opacity: 0.35; background: rgba(91, 108, 249, 0.35); }
+  100% { transform: translate(0, 0); opacity: 1; background: var(--accent); }
+}
+@keyframes conv-drift-4 {
+  0%   { transform: translate(0, -100px); opacity: 0.35; background: rgba(91, 108, 249, 0.35); }
+  100% { transform: translate(0, 0); opacity: 1; background: var(--accent); }
+}
+@keyframes conv-drift-5 {
+  0%   { transform: translate(0, 100px); opacity: 0.35; background: rgba(91, 108, 249, 0.35); }
+  100% { transform: translate(0, 0); opacity: 1; background: var(--accent); }
+}
+
+.convergence-label {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}

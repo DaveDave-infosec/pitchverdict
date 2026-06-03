@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Surface */
+  --bg: #07070B;
+  --surface: #0F0F15;
+  --elevated: #16161F;
+  --border: #22222E;
+  --border-subtle: #1A1A24;
+
+  /* Accent */
+  --accent: #5B6CF9;
+  --accent-light: #8B96FF;
+  --accent-glow: rgba(91, 108, 249, 0.15);
+
+  /* Verdict */
+  --verdict-pass: #1A7A5E;
+  --verdict-pass-glow: rgba(26, 122, 94, 0.2);
+  --verdict-conditional: #A07820;
+  --verdict-needs-work: #8B4513;
+  --verdict-hard-pass: #7A2020;
+  --verdict-too-early: #4A4A5A;
+
+  /* Status */
+  --success: #2D9E78;
+  --warning: #C49020;
+  --danger: #C43030;
+
+  /* Text */
+  --text-primary: #EEEEF5;
+  --text-secondary: #9090A8;
+  --text-muted: #5A5A70;
+
+  /* Special */
+  --purple-glow: rgba(124, 92, 191, 0.4);
+  --purple-glow-soft: rgba(124, 92, 191, 0.08);
+
+  /* Typography */
+  --font-primary: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Layout */
+  --max-width: 1100px;
+  --text-width: 800px;
+
+  /* Radius — sharp & institutional */
+  --radius-card: 6px;
+  --radius-badge: 4px;
+  --radius-button: 0px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: var(--accent-light);
+}
+
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+input, textarea, select {
+  font-family: var(--font-primary);
+  font-size: 15px;
+  color: var(--text-primary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 12px 14px;
+  outline: none;
+  width: 100%;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 96px;
+  line-height: 1.6;
+}
+
+::placeholder {
+  color: var(--text-muted);
+}
+
+::selection {
+  background: var(--accent-glow);
+  color: var(--text-primary);
+}
+
+/* App scaffolding */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.text-container {
+  max-width: var(--text-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent);
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 600;
+  height: 48px;
+  padding: 0 32px;
+  border-radius: var(--radius-button);
+  transition: background-color 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent-light);
+  color: var(--text-primary);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: var(--radius-button);
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  color: var(--text-primary);
+}
+
+/* Placeholder page */
+.placeholder-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+
+.placeholder-page-inner {
+  text-align: center;
+  max-width: 480px;
+}
+
+.placeholder-page-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.placeholder-page-text {
+  color: var(--text-secondary);
+  font-size: 15px;
+}

@@ -1,0 +1,22 @@
+.step-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.01em;
+}
+
+.step-subtitle {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}

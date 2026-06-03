@@ -1,0 +1,102 @@
+.score-grid {
+  margin-bottom: 56px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.score-grid--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.score-grid__header {
+  margin-bottom: 16px;
+}
+
+.score-grid__label {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 11px;
+  color: var(--text-tertiary, #545460);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.score-grid__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.score-cell {
+  background: var(--surface, #0F0F15);
+  border-radius: 6px;
+  padding: 16px 18px 18px;
+  border: 1px solid var(--border, #1F1F2A);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1), transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.score-cell--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.score-cell__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+
+.score-cell__label {
+  font-size: 11px;
+  color: var(--text-secondary, #7B7B85);
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.score-cell__value {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.score-cell__bar {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.score-cell__bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.score-cell__value--excellent { color: #4FB05C; }
+.score-cell__bar-fill--excellent { background-color: #4FB05C; }
+.score-cell__value--strong { color: #6DA86D; }
+.score-cell__bar-fill--strong { background-color: #6DA86D; }
+.score-cell__value--mid { color: #C9A857; }
+.score-cell__bar-fill--mid { background-color: #C9A857; }
+.score-cell__value--weak { color: #D4823E; }
+.score-cell__bar-fill--weak { background-color: #D4823E; }
+.score-cell__value--critical { color: #C45A4E; }
+.score-cell__bar-fill--critical { background-color: #C45A4E; }
+
+@media (max-width: 768px) {
+  .score-grid__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .score-grid__grid { grid-template-columns: 1fr; }
+}
