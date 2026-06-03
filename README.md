@@ -55,7 +55,7 @@ If complete pitch confidentiality is critical, run the contract against a local 
 ## Run it locally
 
 ```bash
-git clone https://github.com/<you>/pitchverdict.git
+git clone https://github.com/DaveDave-infosec/pitchverdict.git
 cd pitchverdict/frontend
 npm install
 cp .env.example .env.local
