@@ -27,9 +27,14 @@ export function MyPitches() {
     if (!account) {
       setLoading(false);
       setResults([]);
+      setHasFetched(false);
+      setError(null);
       return;
     }
     let active = true;
+    setLoading(true);
+    setResults([]);
+    setError(null);
     const fetchMine = async () => {
       try {
         const data = await getMyPitches(account);
