@@ -4,7 +4,7 @@
 
 A wallet-gated workspace where six AI investor lenses reach consensus on your startup pitch, built on GenLayer Studio Network's multi-validator infrastructure.
 
-[Live Demo](https://pitchverdict.vercel.app) · [Contract on Explorer](https://explorer-studio.genlayer.com/address/0x5A67f7fC54eD3C4E81FdC9C1eBbcb05F62230c1F) · [Launch Thread](https://x.com/klauss6139)
+[Live Demo](https://pitchverdict.vercel.app) · [Contract on Explorer](https://explorer-studio.genlayer.com/address/0x6D3Ab2dd26A8D213C4C798bf775f28FB3c49Db31) · [Launch Thread](https://x.com/klauss6139)
 
 ---
 
