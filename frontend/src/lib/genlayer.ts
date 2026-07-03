@@ -101,6 +101,17 @@ export async function getResultCount(): Promise<number> {
   })
 }
 
+export async function getAllResults(): Promise<PitchResult[]> {
+  return withRetry(async () => {
+    const results = await publicClient.readContract({
+      address: CONTRACT_ADDRESS,
+      functionName: "get_all_results",
+      args: [],
+    } as any)
+    return (results as PitchResult[]) || []
+  })
+}
+
 // ---------- Submit + wait helper (v2) ----------
 // Polls getMyPitches after submission to detect the new pitch by result_id.
 // Avoids relying on transaction receipt return value extraction.

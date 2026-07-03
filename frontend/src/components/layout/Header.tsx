@@ -49,6 +49,9 @@ export function Header() {
           <NavLink to="/pitch" className={({ isActive }) => `header__nav-link ${isActive ? 'header__nav-link--active' : ''}`}>
             Pitch
           </NavLink>
+          <NavLink to="/feed" className={({ isActive }) => `header__nav-link ${isActive ? 'header__nav-link--active' : ''}`}>
+            Feed
+          </NavLink>
           <NavLink to="/my" className={({ isActive }) => `header__nav-link ${isActive ? 'header__nav-link--active' : ''}`}>
             My Pitches
           </NavLink>

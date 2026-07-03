@@ -4,6 +4,7 @@ import { Home } from "./pages/Home"
 import { Pitch } from "./pages/Pitch"
 import { Result } from "./pages/Result"
 import { MyPitches } from "./pages/MyPitches"
+import { Feed } from "./pages/Feed"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/pitch" element={<Pitch />} />
           <Route path="/result/:resultId" element={<Result />} />
 <Route path="/my" element={<MyPitches />} />
+          <Route path="/feed" element={<Feed />} />
         </Routes>
       </main>
     </div>

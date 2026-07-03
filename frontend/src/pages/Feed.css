@@ -1,0 +1,68 @@
+.feed-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 96px;
+  min-height: calc(100vh - 80px);
+}
+
+.feed-page__header {
+  margin-bottom: 32px;
+}
+
+.feed-page__title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 6px;
+  color: var(--text-primary);
+  line-height: 1.05;
+}
+
+.feed-page__subtitle {
+  font-size: 14px;
+  color: var(--text-secondary, #7B7B85);
+  margin: 0;
+}
+
+.feed-page__addr {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-left: 4px;
+}
+
+.feed-page__state {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 13px;
+  color: var(--text-secondary, #7B7B85);
+  padding: 56px 0;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.feed-page__state--error {
+  color: #D4823E;
+}
+
+.feed-page__link {
+  color: var(--accent, #5B6CF9);
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.feed-page__link:hover {
+  text-decoration: underline;
+}
+
+.feed-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (max-width: 640px) {
+  .feed-page__title {
+    font-size: 36px;
+  }
+}
